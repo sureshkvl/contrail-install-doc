@@ -19,7 +19,7 @@ DEFAULT_GW=10.0.1.1
 
 FLOATING_RANGE=${FLOATING_RANGE:-172.24.4.0/24}
 Q_L3_ENABLED=${Q_L3_ENABLED:-True}
-VGW_MASQUERADE=${$VGW_MASQUERADE:-True}
+VGW_MASQUERADE=${VGW_MASQUERADE:-True}
 VR_KMOD_OPTS=${VR_KMOD_OPTS:-"vr_flow_entries=4096 vr_oflow_entries=512 vr_bridge_entries=128"}
 
 #/usr/share/contrail-utils/provision_vrouter.py --host_name devstack --host_ip 10.0.1.3 --api_server_ip 10.0.1.5
