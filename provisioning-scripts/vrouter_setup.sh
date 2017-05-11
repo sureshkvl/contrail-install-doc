@@ -29,10 +29,10 @@ VR_KMOD_OPTS=${VR_KMOD_OPTS:-"vr_flow_entries=4096 vr_oflow_entries=512 vr_bridg
 function insert_vrouter() {
 
     if ! lsmod | grep -q vrouter; then
-        echo_summary "Inserting vrouter kernel module"
+        echo "Inserting vrouter kernel module"
         sudo modprobe vrouter $VR_KMOD_OPTS
         if [[ ! $? -eq 0 ]]; then
-            echo_summary "Failed to insert vrouter kernel module"
+            echo "Failed to insert vrouter kernel module"
             return 1
         fi
     fi
@@ -61,7 +61,7 @@ function remove_vrouter() {
 
     ! lsmod | grep -q vrouter && return 0
 
-    echo_summary "Removing vrouter kernel module"
+    echo "Removing vrouter kernel module"
 
     sudo ip addr add $VHOST_INTERFACE_CIDR dev $VHOST_INTERFACE_NAME || true #dhclient may have already done that
     sudo ip route show dev vhost0 scope global | while read route; do
