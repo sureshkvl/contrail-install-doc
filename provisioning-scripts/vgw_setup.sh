@@ -96,5 +96,5 @@ function setupgw(){
     fi
 }
 
-insert_vrouter
-#setupgw
+#insert_vrouter
+setupgw
